@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import { SocialLinks } from './components/AboutMe';
+import { UnderConstruction } from './components/UnderConstruction';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Hi, I'm Luke.
-        🚧Site Under Construction...🚧
+        <SocialLinks />
+        <UnderConstruction></UnderConstruction>
       </header>
     </div>
   );
