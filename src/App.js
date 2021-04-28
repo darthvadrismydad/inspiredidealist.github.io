@@ -1,16 +1,15 @@
 import './App.css';
-import { SocialLinks } from './components/AboutMe';
+import { AboutMe } from './components/AboutMe';
+import { SocialLinks } from './components/SocialLinks';
 import { UnderConstruction } from './components/UnderConstruction';
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <header className="App-header">
         <SocialLinks />
-        <UnderConstruction></UnderConstruction>
+        <AboutMe />
       </header>
     </div>
   );
 }
-
-export default App;

@@ -1,46 +1,30 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { makeStyles, Typography } from "@material-ui/core";
-import { faLinkedinIn, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { Card, CardContent, CardHeader, CardMedia, makeStyles, Typography } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        '& > *': {
-            margin: theme.spacing(1),
-        }
-    },
-    link: {
-        color: 'white'
+const useStyles = makeStyles(theme => ({
+    media: {
+        height: 420,
     }
 }));
 
-export const SocialLinks = () => {
+export function AboutMe() {
+
     const classes = useStyles();
 
-    const links = [
-        {
-            icon: faLinkedinIn,
-            url: 'https://www.linkedin.com/in/lucas-moran-b2084024'
-        },
-        {
-            icon: faGithub,
-            url: 'https://github.com/InspiredIdealist'
-        },
-        {
-            icon: faMedium,
-            url: 'https://medium.com/@lucas.moran40'
-        }
-    ];
-
-    const asIcon = (link) => (
-        <a key={link.url} href={link.url} className={classes.link} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={link.icon} size="lg" />
-        </a>
-    );
-
     return (
-        <Typography className={classes.root}>
-            {links.map(asIcon)}
-        </Typography>
-    )
-};
+        <Card>
+            <CardHeader
+                title="🤘 The Luke Moran Portal 🚀"
+                subheader="software enthusiast, musician, rock climber, skiier, gamer, technologist"
+            />
+            <CardMedia className={classes.media}
+                image="/assets/sm_avatar.jpg" />
+            <CardContent>
+                <Typography>
+                    I write software.
+                    I play guitar sometimes.
+                    Occasionally, I remember to feed my plants
+                </Typography>
+            </CardContent>
+        </Card>
+    );
+}
